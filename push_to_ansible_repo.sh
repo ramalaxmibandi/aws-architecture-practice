@@ -8,7 +8,6 @@ ANSIBLE_DIR="https://github.com/ramalaxmibandi/ansible-pipeline"
 TERRAFORM_FILES="https://github.com/ramalaxmibandi/terraform-pipeline"
 
 # Navigate to the Ansible repository directory
-cd "$ANSIBLE_DIR" || exit
 
 # Pull the latest changes in the Ansible repository
 git pull
