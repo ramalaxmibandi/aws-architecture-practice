@@ -53,17 +53,29 @@ pipeline {
                 script {
                     // Execute the shell script
                     sh './generatefiles.sh'
+		 writeFile file: 'ansible.cfg', text: ansibleConfig
+                    writeFile file: 'ansible_inventory', text: ansibleInventory
+                    writeFile file: 'private_key.pem', text: privateKey
                 }
 
     }
 	
 }
-      stage('Push Ansible Files') {
-            steps { sh "chmod +x -R ${env.WORKSPACE}"
-                script {
-                    // Execute the shell script to push Ansible files to Ansible repo
-                    sh './push_to_ansible_repo.sh'
-                }
+       stage('Push to Ansible Repository') {
+            steps {
+                // Checkout Ansible repository
+                git branch: 'main', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
+
+                // Copy generated files to Ansible repository
+                sh 'cp ansible.cfg ansible_inventory private_key.pem /var/jenkins_home/workspace/terra-pipeline'
+
+                // Commit and push changes
+                sh '''
+                    cd  /var/jenkins_home/workspace/terra-pipeline
+                    git add ansible.cfg ansible_inventory private_key.pem
+                    git commit -m "Update Ansible files from Terraform"
+                    git push origin main  # Or your branch name
+                '''
             }
         }
     }
