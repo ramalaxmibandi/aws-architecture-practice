@@ -63,9 +63,6 @@ pipeline {
                 // Checkout Ansible repository
                 git branch: 'main', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
 
-                // Copy generated files to Ansible repository
-                sh 'cp ansible.cfg ansible_inventory private_key.pem /var/jenkins_home/workspace/terra-pipeline'
-
                 // Commit and push changes
                 sh '''
                     cd  /var/jenkins_home/workspace/terra-pipeline
