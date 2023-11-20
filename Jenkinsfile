@@ -53,9 +53,6 @@ pipeline {
                 script {
                     // Execute the shell script
                     sh './generatefiles.sh'
-		 writeFile file: 'ansible.cfg', text: ansibleConfig
-                    writeFile file: 'ansible_inventory', text: ansibleInventory
-                    writeFile file: 'private_key.pem', text: privateKey
                 }
 
     }
