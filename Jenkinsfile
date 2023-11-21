@@ -63,11 +63,8 @@ pipeline {
 	
 }
        stage('Push to Ansible Repository') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'gituser', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                    git branch: 'main', credentialsId: 'Git', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
-                }
-                git branch: 'main', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
+             steps {
+                 git branch: 'main', credentialsId: '6d7c5d51-15f2-49b2-9632-61d2729ef2f6', url: 'https://github.com/ramalaxmibandi/ansible-pipeline'
 
                 // Commit and push changes
                 sh '''
@@ -75,9 +72,9 @@ pipeline {
                     git add ansible.cfg ansible_inventory private_key.pem
                     git commit -m "Update Ansible files from Terraform"
                     git push origin main  # Or your branch name
-		git config --global user.email "rlaxmibandi@gmail.com"
-                git config --global user.name "ramalaxmibandi"
-                '''
+                
+	
+                
             }
         }
     }
