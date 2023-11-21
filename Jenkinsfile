@@ -72,6 +72,8 @@ pipeline {
                     cd  /var/jenkins_home/workspace/terra-pipeline
                     git add ansible.cfg ansible_inventory private_key.pem
                     git commit -m "Update Ansible files from Terraform"
+		    git config --global user.email "rlaxmibandi@gmail.com"
+                    git config --global user.name "ramalaxmibandi"
                     git push origin main  # Or your branch name
                 '''
             }
