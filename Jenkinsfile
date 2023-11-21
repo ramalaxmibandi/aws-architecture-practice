@@ -11,6 +11,10 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('Secret-Access-key')
        
     }
+  environment {
+        GIT_USERNAME = credentials('gituser')
+        GIT_EMAIL = credentials('Git')
+    }
 
     stages {
         stage('Checkout') {
