@@ -64,7 +64,9 @@ pipeline {
 }
        stage('Push to Ansible Repository') {
             steps {
-                // Checkout Ansible repository
+                withCredentials([usernamePassword(credentialsId: 'gituser', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                    git branch: 'main', credentialsId: 'Git', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
+                }
                 git branch: 'main', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
 
                 // Commit and push changes
