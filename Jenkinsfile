@@ -73,8 +73,8 @@ pipeline {
                     git add ansible.cfg ansible_inventory private_key.pem
                     git commit -m "Update Ansible files from Terraform"
                     git push origin main  # Or your branch name
-		     GIT_USERNAME = 'ramalaxmibandi'
-                     GIT_EMAIL = 'rlaxmibandi@gmail.com'
+		git config --global user.email "rlaxmibandi@gmail.com"
+                git config --global user.name "ramalaxmibandi"
                 '''
             }
         }
