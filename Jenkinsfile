@@ -66,7 +66,7 @@ pipeline {
                   git branch: 'main', credentialsId: 'git credentials', url: 'https://github.com/ramalaxmibandi/ansible-pipeline'
 	     }
        }
-	stage(push to Ansible repo) {
+	stage('push to Ansible repo') {
 		steps{
                     cd  /var/jenkins_home/workspace/terra-pipeline
                     git add ansible.cfg ansible_inventory private_key.pem
