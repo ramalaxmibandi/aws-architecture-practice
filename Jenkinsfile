@@ -67,6 +67,7 @@ pipeline {
 	     }
        }
 	stage(push to Ansible repo) {
+		steps{
                     cd  /var/jenkins_home/workspace/terra-pipeline
                     git add ansible.cfg ansible_inventory private_key.pem
                     git commit -m "Update Ansible files from Terraform"
@@ -76,4 +77,5 @@ pipeline {
                 
             }
         }
+    }
     }
