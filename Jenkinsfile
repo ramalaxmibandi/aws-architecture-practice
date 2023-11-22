@@ -9,9 +9,9 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS-credentials')
         AWS_SECRET_ACCESS_KEY = credentials('AWS-credentials')
+
 	    
-       
-    }
+ }
 
 
     stages {
@@ -60,12 +60,13 @@ pipeline {
     }
 	
 }
+	    
        stage('Push to Ansible Repository') {
              steps {
-                 git branch: 'main', credentialsId: '6d7c5d51-15f2-49b2-9632-61d2729ef2f6', url: 'https://github.com/ramalaxmibandi/ansible-pipeline'
-
-                // Commit and push changes
-                sh '''
+                  git branch: 'main', credentialsId: 'git credentials', url: 'https://github.com/ramalaxmibandi/ansible-pipeline'
+	     }
+       }
+	stage(push to Ansible repo) {
                     cd  /var/jenkins_home/workspace/terra-pipeline
                     git add ansible.cfg ansible_inventory private_key.pem
                     git commit -m "Update Ansible files from Terraform"
@@ -76,4 +77,3 @@ pipeline {
             }
         }
     }
-}
