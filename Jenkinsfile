@@ -7,10 +7,8 @@ pipeline {
     }
 
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('Access-key')
-        AWS_SECRET_ACCESS_KEY = credentials('Secret-Access-key')
-	 git_config_global_user_name  = credentials('gituser')
-	 git_config_global_user_email  = credentials('Git')
+        AWS_ACCESS_KEY_ID     = credentials('AWS-credentials')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS-credentials')
 	    
        
     }
