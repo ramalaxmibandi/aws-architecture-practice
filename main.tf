@@ -3,8 +3,8 @@ data "template_file" "ansible_config" {
   template = file("ansible.cfg.tpl")
 
   vars = {
-    master_ips = join("\n", aws_instance.master.*.private_ip)
-    worker_ips = join("\n", aws_instance.worker.*.private_ip)
+    mastert_ips = join("\n", aws_instance.mastert.*.private_ip)
+    workert_ips = join("\n", aws_instance.workert.*.private_ip)
   }
 }
 
@@ -13,13 +13,13 @@ data "template_file" "ansible_inventory" {
   template = file("ansible_inventory.tpl")
 
   vars = {
-    master_ips = join("\n", aws_instance.master.*.private_ip)
-    worker_ips = join("\n", aws_instance.worker.*.private_ip)
+    mastert_ips = join("\n", aws_instance.mastert.*.private_ip)
+    workert_ips = join("\n", aws_instance.workert.*.private_ip)
   }
 }
 
 # Generate a random private key for SSH
-resource "tls_private_key" "ansible_private_key" {
+resource "tls_private_key" "ansible_private_key1" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }
@@ -34,6 +34,6 @@ output "ansible_inventory_content" {
 }
 
 output "private_key" {
-  value = tls_private_key.ansible_private_key.private_key_pem
+  value = tls_private_key.ansible_private_key1.private_key_pem
   sensitive = true
 }
