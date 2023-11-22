@@ -1,6 +1,6 @@
 # Creating Security Group 
-resource "aws_security_group" "cluster_sg" {
-  vpc_id = aws_vpc.cluster_vpc.id
+resource "aws_security_group" "clustert_sg" {
+  vpc_id = aws_vpc.clustert_vpc.id
   # Inbound Rules
   # HTTP access from anywhere
   ingress {
@@ -32,6 +32,6 @@ resource "aws_security_group" "cluster_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "cluster SG"
+    Name = "clustert SG"
   }
 }
