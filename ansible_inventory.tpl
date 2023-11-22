@@ -1,5 +1,5 @@
-[master]
-${master_ips}
+[mastert]
+${mastert_ips}
 
-[workers]
-${worker_ips}
+[workerts]
+${workert_ips}
