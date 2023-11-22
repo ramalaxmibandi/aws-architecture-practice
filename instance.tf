@@ -1,20 +1,20 @@
  #instance.tf
-resource "aws_instance" "master" {
+resource "aws_instance" "mastert" {
   ami           = "ami-0ff1c68c6e837b183"
   instance_type = "t2.micro"
   count         = 1
   key_name          = "jenkins-key"
   tags = {
-    Name = "master"
+    Name = "mastert"
   }
 }
 
-resource "aws_instance" "worker" {
+resource "aws_instance" "workert" {
   ami           = "ami-0ff1c68c6e837b183"
   instance_type = "t2.micro"
   count         = 2
   key_name          = "jenkins-key"
   tags = {
-    Name = "worker-${count.index + 1}"
+    Name = "workert-${count.index + 1}"
   }
 }
