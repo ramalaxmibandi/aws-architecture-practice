@@ -63,7 +63,7 @@ pipeline {
 	    
        stage('git checkin') {
              steps {
-                  git branch: 'main', credentialsId: 'git', url: 'https://github.com/ramalaxmibandi/ansible-pipeline'
+                  git branch: 'main', credentialsId: 'git',  'ramalaxmibandi/ansible-pipeline'
 	     }
        }
 	stage('push to Ansible repo') {
