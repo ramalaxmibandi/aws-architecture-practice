@@ -22,13 +22,13 @@ pipeline {
         }
         stage('Terraform init') {
             steps {
-                sh 'terraform init'
+                sh 'pwd; terraform init'
             }
         }
         stage('Plan') {
             steps {
-                sh 'terraform plan -out tfplan'
-                sh 'terraform show -no-color tfplan > tfplan.txt'
+                sh 'pwd; terraform plan -out tfplan'
+                sh 'pwd; terraform show -no-color tfplan > tfplan.txt'
             }
         }
         stage('Apply / Destroy') {
