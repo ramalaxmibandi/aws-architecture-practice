@@ -71,7 +71,6 @@ pipeline {
                     def gitConfig = sh(script: "echo '\$GIT_CONFIG_CREDENTIALS'", returnStdout: true).trim()
 
                     // Set Git config for this pipeline execution
-                    sh "git config --global credential.helper store" // Optional - to store credentials locally
                     sh "git config --global user.name ${gitConfig.split(':')[0]}"
                     sh "git config --global user.email ${gitConfig.split(':')[1]}"
 		    sh "git config --global user.password ${gitConfig.split(':')[2]}"
