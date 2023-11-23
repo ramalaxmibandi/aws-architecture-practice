@@ -72,9 +72,6 @@ pipeline {
                     sh 'git add ansible.cfg ansible_inventory private_key.pem'
                     sh 'git commit -m "Update Ansible files from Terraform"'
                     sh 'git push origin main'
-		    sh  'git config --global user.name: "ramalaxmibandi"'
-		    sh  'git config --global user.email: "rlaxmibandi@gmail.com"'
-		    sh  'git commit --amend --reset-author'
 
                 
 	
