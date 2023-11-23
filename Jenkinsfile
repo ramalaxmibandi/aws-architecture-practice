@@ -66,7 +66,7 @@ pipeline {
 	    
        stage('git checkin') {
              steps {
-                    git branch: 'main', url: 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
+                    git remote set-url origin 'https://github.com/ramalaxmibandi/ansible-pipeline'
 	     }
        }
 	stage('push to Ansible repo') {
