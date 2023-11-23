@@ -74,8 +74,8 @@ pipeline {
                     sh "git config --global credential.helper store" // Optional - to store credentials locally
                     sh "git config --global user.name ${gitConfig.split(':')[0]}"
                     sh "git config --global user.email ${gitConfig.split(':')[1]}"
-					sh "git config --global user.password ${gitConfig.split(':')[2]"
-                }
+		    sh "git config --global user.password ${gitConfig.split(':')[2]}"
+                
             }
         }
 }
