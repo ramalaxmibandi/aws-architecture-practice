@@ -9,6 +9,7 @@ pipeline {
     environment {
        AWS_ACCESS_KEY = credentials('access-key')
           AWS_SECRET_ACCESS_KEY = credentials('secret-access-key')
+	GIT_REPO = 'https://github.com/ramalaxmibandi/ansible-pipeline.git
 	 GIT_CONFIG_USERNAME = credentials('Git-config-username')
 	 GIT_CONFIG_EMAIL =  credentials('Git-config-email')
 	 PASSWORD = credentials('git-password')
