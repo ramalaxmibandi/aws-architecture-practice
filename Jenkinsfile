@@ -74,10 +74,7 @@ pipeline {
 		steps{
                     sh 'cd  /var/lib/jenkins/workspace/terraform-pipeline'
                     sh 'git add ansible.cfg ansible_inventory private_key.pem'
-		    sh 'git config --global user.name "ramalaxmibandi"'
-                    sh  'git config --global user.email "rlaxmibandi@gmail.com"'
-		    sh 'git commit --amend --author="ramalaxmibandi <rlaxmibandi@gmail.com>" -m "Update Ansible files from Terraform"'
-		    sh 'git rebase –continue'
+		    sh 'git remote add origin "https://github.com/ramalaxmibandi/ansible-pipeline.git"'
                     sh 'git push origin main'
 
                 
