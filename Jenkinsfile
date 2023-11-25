@@ -74,8 +74,8 @@ pipeline {
 		steps{
                     sh 'cd  /var/lib/jenkins/workspace/terraform-pipeline'
                     sh 'git add ansible.cfg ansible_inventory private_key.pem'
+		    sh 'git commit --amend --author="ramalaxmibandi <rlaxmibandi@gmail.com>"'
                     sh 'git commit -m "Update Ansible files from Terraform"'
-		    sh 'git status'
                     sh 'git push origin main'
 
                 
