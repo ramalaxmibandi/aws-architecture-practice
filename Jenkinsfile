@@ -11,7 +11,7 @@ pipeline {
           AWS_SECRET_ACCESS_KEY = credentials('aws-secretkey')
 	 GIT_CONFIG_USERNAME = credentials('Git-config-username')
 	 GIT_CONFIG_EMAIL =  credentials('Git-config-email')
-	    GIT_CREDENTIALS = credentials('git')
+	    GIT_CREDENTIALS = credentials('gitusername')
 	 PASSWORD = credentials('git-password')
 
 	    
