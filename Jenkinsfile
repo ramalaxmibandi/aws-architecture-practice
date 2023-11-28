@@ -9,7 +9,6 @@ pipeline {
     environment {
        AWS_ACCESS_KEY = credentials('aws-accesskey')
           AWS_SECRET_ACCESS_KEY = credentials('aws-secretkey')
-	GIT_REPO = 'https://github.com/ramalaxmibandi/ansible-pipeline.git'
 	 GIT_CONFIG_USERNAME = credentials('Git-config-username')
 	 GIT_CONFIG_EMAIL =  credentials('Git-config-email')
 	 PASSWORD = credentials('git-password')
@@ -73,6 +72,7 @@ pipeline {
 	stage('push to Ansible repo') {
 		steps{
                     sh 'cd  /var/lib/jenkins/workspace/terraform-pipeline'
+		    sh 'git remote add origin https://github.com/ramalaxmibandi/ansible-pipeline.git' 
                     sh 'git add ansible.cfg ansible_inventory private_key.pem'
 		    sh 'git commit -m "adding ansible files"'
                     sh 'git push origin main'
