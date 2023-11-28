@@ -75,7 +75,7 @@ pipeline {
                     sh 'cd  /var/lib/jenkins/workspace/terraform-pipeline'
                     sh 'git add ansible.cfg ansible_inventory private_key.pem'
 		    sh 'git commit -m "adding ansible files"'
-                    sh 'git push --set-upstream <https://github.com/ramalaxmibandi/ansible-pipeline.git> <main>'
+                    sh 'git push origin main'
 
                 
 	
