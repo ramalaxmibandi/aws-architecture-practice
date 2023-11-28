@@ -75,7 +75,7 @@ pipeline {
 		    sh 'git remote -v' 
 		    sh 'git add ansible.cfg ansible_inventory private_key.pem'
 		    sh 'git commit -m "adding ansible files"'
-                    sh ' git push'
+                    sh ' git push --set-upstream origin main'
 
                 
 	
