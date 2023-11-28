@@ -66,14 +66,14 @@ pipeline {
 	    
        stage('git checkin') {
              steps {
-                    sh 'git remote set-url origin "GIT_REPO"'
+                    sh 'git remote set-url origin "https://github.com/ramalaxmibandi/ansible-pipeline.git"'
 	     }
        }
 	stage('push to Ansible repo') {
 		steps{
                     sh 'cd  /var/lib/jenkins/workspace/terraform-pipeline'
 		    sh 'git remote -v' 
-		    sh 'git add ansible_config ansible_inventory private_key.pem'
+		    sh 'git add ansible.cfg ansible_inventory private_key.pem'
 		    sh 'git commit -m "adding ansible files"'
                     sh ' git remote set-url [--push] https://github.com/ramalaxmibandi/ansible-pipeline.git'
 
