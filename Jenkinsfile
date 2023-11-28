@@ -72,7 +72,7 @@ pipeline {
 	stage('push to Ansible repo') {
 		steps{
                     sh 'cd  /var/lib/jenkins/workspace/terraform-pipeline'
-		    sh 'git remote add origin https://github.com/ramalaxmibandi/ansible-pipeline.git' 
+		    sh 'git remote add origin https://github.com/ramalaxmibandi/ansi-exercise.git' 
                     sh 'git add ansible.cfg ansible_inventory private_key.pem'
 		    sh 'git commit -m "adding ansible files"'
                     sh 'git push origin main'
