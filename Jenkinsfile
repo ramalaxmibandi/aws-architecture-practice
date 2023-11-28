@@ -75,7 +75,7 @@ pipeline {
 		    sh 'git remote -v' 
 		    sh 'git add ansible.cfg ansible_inventory private_key.pem'
 		    sh 'git commit -m "adding ansible files"'
-                    sh ' git remote set-url [--push] https://github.com/ramalaxmibandi/ansible-pipeline.git'
+                    sh ' git push'
 
                 
 	
