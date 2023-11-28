@@ -12,7 +12,6 @@ pipeline {
 	 GIT_CONFIG_USERNAME = credentials('Git-config-username')
 	 GIT_CONFIG_EMAIL =  credentials('Git-config-email')
 	    GIT_CREDENTIALS = credentials('git')
-	 PASSWORD = credentials('git-password')
 
 	    
  }
