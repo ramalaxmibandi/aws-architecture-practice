@@ -65,8 +65,6 @@ pipeline {
        stage('git checkin') {
              steps {
 		 withCredentials([sshUserPrivateKey(credentialsId: 'Git')]) {
-                       sh 'git config --global user.email "rlaxmibandi@gmail.com"'
-                       sh 'git config --global user.name "ramalaxmibandi"'
                       sh 'git remote set "git@github.com:ramalaxmibandi/terraform-pipeline.git"' 
 	     }
        }
