@@ -9,7 +9,7 @@ pipeline {
     environment {
        AWS_ACCESS_KEY = credentials('aws-accesskey')
           AWS_SECRET_ACCESS_KEY = credentials('aws-secretkey')
-	    GIT_CREDENTIALS = credentials('git')
+	    GIT_CREDENTIALS = credentials('Git')
 
 	    
  }
